@@ -1,0 +1,321 @@
+﻿@model Client 
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Backgorund Color</title>
+</head>
+<body style="background-color:black;">-->
+@*<h1>Products</h1>
+    <p>We have developed more than 10 products till now.</p>*@
+
+
+<!--<p style="background-color: Background; color: white; font-size: 10vw">
+
+        <strong> Create view</strong>
+    </p>
+
+
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1595126730769-f680ac3f9486?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <p style="color: white; font-size: 5vw ; position:page">
+
+        <strong> Adding Client </strong>
+    </p>
+
+
+    <hr style="height:1px;border-width:0;color:white;background-color:black">
+    <br />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form method="post" asp-controller="Clients" asp-action="create">
+
+    <div class="row">
+
+        <label asp-for="fullname" class="col-2" style="color:white ; text">
+        </label>
+        <input asp-for="fullname" class="col-5 form-control" />
+        <span asp-validation-for="fullname" class="text-danger"></span>
+        @*that for error message*@
+    </div>
+
+
+
+    <div class="row">
+        <label asp-for="place" class="col-2" style="color:white">
+        </label>
+        <input asp-for="place" class="col-5 form-control" />
+        <span asp-validation-for="place" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+
+        <label asp-for=" job" class="col-2" style="color:white">
+        </label>
+        <input asp-for=" job" class="col-5 form-control" />
+        <span asp-validation-for=" job" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="row">
+
+        <label asp-for=" National_Id" class="col-2" style="color:white">
+        </label>
+        <input asp-for=" National_Id" class="col-5 form-control" />
+        <span asp-validation-for=" National_Id" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="row">
+
+        <label asp-for="phoneNo1" class="col-2" style="color:white">
+        </label>
+        <input asp-for="phoneNo1" class="col-5 form-control" />
+        <span asp-validation-for="phoneNo1" class="text-danger"></span>
+
+
+    </div>
+
+
+    <div class="row">
+
+        <label asp-for="phoneNo2" class="col-2" style="color:white">
+        </label>
+        <input asp-for="phoneNo2" class="col-5 form-control" />
+        <span asp-validation-for="phoneNo2" class="text-danger"></span>
+
+
+    </div>
+
+
+
+    @*<div class="row">
+
+            <label asp-for="Bouns" class="col-2" style="color:white">
+            </label>
+            <input asp-for="Bouns" class="col-5 form-control" />
+            <span asp-validation-for="Bouns" class="text-danger"></span>
+
+
+        </div>*@
+
+
+
+
+    <div class="row">
+
+        <label asp-for="email" class="col-2" style="color:white">
+        </label>
+        <input asp-for="email" class="col-5 form-control" />
+        <span asp-validation-for="email" class="text-danger"></span>
+
+
+    </div>
+
+
+    <div class="row">
+
+        <label asp-for="Confirm_Email" class="col-2" style="color:white">
+        </label>
+        <input asp-for="Confirm_Email" class="col-5 form-control" />
+        <span asp-validation-for="Confirm_Email" class="text-danger"></span>
+
+
+    </div>
+
+
+    <div class="row">
+
+        <label asp-for="birthDate" class="col-2" style="color:white">
+        </label>
+        <input asp-for="birthDate" class="col-5 form-control" />
+        <span asp-validation-for="birthDate" class="text-danger"></span>
+
+
+    </div>
+
+
+    <div class="row">
+
+        <label asp-for="Reservation_time" class="col-2" style="color:white">
+        </label>
+        <input asp-for="Reservation_time" class="col-5 form-control" />
+        <span asp-validation-for="Reservation_time" class="text-danger"></span>
+
+
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <label asp-for="Arriving_time" class="col-2" style="color:white">
+        </label>
+        <input asp-for="Arriving_time" class="col-5 form-control" />
+        <span asp-validation-for="Arriving_time" class="text-danger"></span>
+
+
+    </div>
+
+
+    <div class="row">
+
+        <label asp-for="LeavingTime" class="col-2" style="color:white">
+        </label>
+        <input asp-for="LeavingTime" class="col-5 form-control" />
+        <span asp-validation-for="LeavingTime" class="text-danger"></span>
+
+
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <label asp-for="password" class="col-2" style="color:white">
+        </label>
+        <input asp-for="password" class="col-5 form-control" />
+        <span asp-validation-for="password" class="text-danger"></span>
+
+
+    </div>
+
+
+    <div class="row">
+
+        <label asp-for="Confirm_password" class="col-2" style="color:white">
+        </label>
+        <input asp-for="Confirm_password" class="col-5 form-control" />
+        <span asp-validation-for="Confirm_password" class="text-danger"></span>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+        <label asp-for=" rooms" class="col-2" style="color:white">
+        </label>
+        <input asp-for=" rooms" class="col-5 form-control" />
+        <span asp-validation-for=" rooms" class="text-danger"></span>
+
+
+    </div>
+
+
+
+    <div class="row">
+
+        <label asp-for="Room_TypeId" class="col-2" style="color:white">
+        </label>
+        <select asp-for=" Room_TypeId"
+                asp-items="@(new SelectList( ViewBag.AllDepartments , "id" , "name" ))" class="col-5 form-control">
+            <option disabled selected>select.........</option>
+        </select>
+
+
+        <span asp-validation-for="Room_TypeId" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="row">
+
+        <label asp-for="PaymentId" class="col-2" style="color:white">
+        </label>
+        <select asp-for=" PaymentId"
+                asp-items="@(new SelectList( ViewBag.ALLPayments , "id" , "name" ))" class="col-5 form-control">
+            <option disabled selected>select.........</option>
+        </select>
+
+
+        <span asp-validation-for="PaymentId" class="text-danger"></span>
+
+
+    </div>
+
+
+
+    @*<div class="row">
+            <label asp-for="payment" class="col-2" style="color:white">
+            </label>
+            <select name="number" class="col-5 form-control">
+                <option value="">Select a number</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option disabled selected>select.........</option>
+            </select>
+
+
+        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <button type="submit" class="btn btn-primary ">save</button>
+</form>

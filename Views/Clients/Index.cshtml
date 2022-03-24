@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Client>
+<
+@*https://images.unsplash.com/photo-1598636410700-e34f8e29fe03?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1934&q=80*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1580744495289-ad224d2c437e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <p style="color: ButtonHighlight; font-size: 5vw ; position:page">
+
+        <strong> Client Lists </strong>
+    </p>
+
+
+
+</body>
+</html>
+
+@*<hr style="height:1px;border-width:0;color:white;background-color:white  ">*@
+<br />
+
+
+@*//_________________________________________________________________________________________________________________________*@
+
+@*<form method="get" asp-controller="Clients" asp-action="Index" class="row">
+
+
+    <select class="form-control col-2" name="room_TypeId" asp-items="@(new SelectList(ViewBag.AllDepartments ,"id" ,"name" ,ViewBag.SelectedDepartmentId))">
+        <option value="0"> ROOM TYPE </option>
+    </select>
+
+    <input name="searchText" value="@ViewBag.currentSearch  " class="form-control col-2" />
+    <button type="submit" class="btn btn-danger">Search</button>
+
+
+
+</form>*@
+
+
+<form method="get" asp-controller="Clients" asp-action="Index" class="row">
+    <input type="text" name="searchText" class="form-control col-2" value="@ViewBag.currentSearch"  placeholder="Search by name"  />        
+    <select class="form-control col-2" name="room_TypeId" asp-items="@(new SelectList(ViewBag.AllDepartments ,"id" ,"name" ,ViewBag.SelectedDepartmentId))">
+        <option value="0"> Room Type </option>
+    </select>
+
+    <button type="submit" class="btn btn-danger">Search</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+    <br />
+    <form method="get" asp-controller="Clients" asp-action="Index" class="row">
+
+        @*<label class="col-lg-auto " style="color:white ;font:bolder "> Write__Page Size </label>*@
+        <input type="number" name="pageSize" class="col-2 form-control  " value="@ViewBag.pageSize" placeholder="Write Page Size"/>
+
+
+        <br />
+
+        @*<label class=" col-lg-auto" style="color:white" ; font:bolder>  Number of Page </label>*@
+        <input type="number" name="pageNumber" class="col-2 form-control " value="@ViewBag.pageNumber" style="color:black" placeholder="Write page number" />
+        
+        @*<input type="submit" class="btn btn-success" value="Go" />*@
+        <button type="submit" class="btn btn-success"> submit </button>
+    </form>
+
+    <hr style="height:1px;border-width:0;color:white;background-color:white  ">
+
+
+
+
+
+
+
+    <a asp-controller="Clients" asp-action="create" class="btn btn-success"> CREATE NEW CLIENT </a>
+
+    <a asp-controller="Room_Type" asp-action="Create" class="btn btn-success"> NEW ROOM TYPE </a>
+
+    <a asp-controller="payments" asp-action="Create" class="btn btn-success"> NEW PAYMENT METHOED </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*class="table table-dark table-bordered  table-hover "*@
+
+    @*//_____________________________________________________________________________________________________________________*@
+
+    <table class="table table-dark table-bordered  table-hover ">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    Name
+
+                    <a asp-controller="Clients" asp-action="Index" asp-route-sortType="asc">  Asc  </a>
+                    <a asp-controller="Clients" asp-action="Index" asp-route-sortType="desc"> Desc      </a>
+
+
+
+                </th>
+                <th> RESIDANSE </th>
+                <th> National ID </th>
+                <th> Leaving Time </th>
+                <th> Number of Rooms </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.fullname</td>
+                    <td>@item.place</td>
+                    <td>@item.National_Id</td>
+                    <td>@item.LeavingTime</td>
+                    <td>@item.rooms</td>
+
+                    <td>
+                        <a asp-action="Details" asp-route-id=@item.Id> <i class="fas fa-info-circle" style="color:beige"></i> </a>
+                        <a asp-action="Edit" asp-route-id=@item.Id>  <i class="fas fa-user-edit" style="color:green"></i> </a>
+                        <a asp-action="Delete" asp-route-id=@item.Id>
+                            <i class="fas fa-user-times" style="color:red"></i>
+                        </a>
+
+                    </td>
+
+
+                    @*asp-route-id=@item.ID WE USED it because details takes id so we tell it use the id of the item in the table and go for it*@
+                </tr>
+            }
+
+        </tbody>
+
+
+    </table>

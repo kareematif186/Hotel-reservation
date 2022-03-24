@@ -1,0 +1,97 @@
+﻿@model Client
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body style="background-color:black;">
+    @*<h1>Products</h1>
+        <p>We have developed more than 10 products till now.</p>*@
+
+
+    <p style=" color: white; font-size: 3vw">
+
+        <strong> welcome to delete view </strong>
+    </p>
+
+    <hr style="height:1px;border-width:0;color:white;background-color:white">
+    <br />
+
+</body>
+</html>
+
+
+
+<dl class="row">
+
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.Id) </dt>
+    <dd class="col-10" style="color:white"> @Html.DisplayFor(e => e.Id) </dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.fullname) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.fullname) </dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.place) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.place)  </dd>
+
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.job) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.job)  </dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.rooms) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.rooms)</dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.Room_TypeId) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.Room_Type.name)</dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.PaymentId) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.PaymentId)</dd>
+
+
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.National_Id) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.National_Id)</dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.phoneNo1) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.phoneNo1)</dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.phoneNo2) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.phoneNo2)</dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.email) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.email)</dd>
+
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.password) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.password)</dd>
+
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.birthDate) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.birthDate)</dd>
+
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.Reservation_time) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.Reservation_time)</dd>
+
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.Arriving_time) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.Arriving_time)</dd>
+
+    <dt class="col-2" style="color:white"> @Html.DisplayNameFor(e => e.LeavingTime) </dt>
+    <dd class="col-10" style="color:white">@Html.DisplayFor(e => e.LeavingTime)</dd>
+
+
+
+
+</dl>
+
+<form method="post" asp-controller="Clients" asp-action="Delete">
+    <input hidden asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger ">Delete</button>
+</form>
+<hr />
+<a asp-action="Index"> back to index </a>
+<a asp-controller=" Employees" asp-action="dispalyservices"> company services </a>
